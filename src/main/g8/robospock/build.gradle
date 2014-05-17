@@ -1,0 +1,28 @@
+// test on jvm with groovy & spock !
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.10.+'
+        // https://github.com/novoda/gradle-android-test-plugin/pull/11
+        classpath 'com.novoda:gradle-android-test-plugin:0.9.9-SNAPSHOT'
+    }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'idea'
+apply plugin: 'android-test'
+
+dependencies {
+    testCompile project(':app')
+    // junit足したり等は面倒なのでrobospockを使う
+    testCompile 'org.robospock:robospock:0.4.+'
+}
+
+android.projectUnderTest ':app'
