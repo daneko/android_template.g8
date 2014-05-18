@@ -13,11 +13,6 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp" />
 
-    <TextView
-        android:text="@string/flavor"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp" />
-
     <Button
         android:text="@string/plus"
         android:id="@+id/plus"
