@@ -12,3 +12,12 @@
   * 上記は何れ解決すると思う (2014/05/16)
 
 ※ あくまで今の構成だから動かない！ってことだと思う
+
+## how to setup
+
+sh ./sh/setup.sh
+
+## how to do testing
+
+./gradlew robospock:testDevDebug
+
