@@ -79,9 +79,14 @@ dependencies {
 }
 
 task findbugs(type: FindBugs) {
-    excludeFilter file('findbugs-exclude-filter.xml')
-    classes = fileTree('build/classes/debug/')
+    reports {
+        xml.enabled = true
+        html.enabled = false
+    }
+    excludeFilter file("\$project.projectDir/config/findbugs-exclude-filter.xml")
+    classes = fileTree('build/classes/dev/debug/')
     source = fileTree('src/main/java/')
     classpath = files( project.configurations.compile.asPath )
     effort = 'max'
+    ignoreFailures = true
 }
